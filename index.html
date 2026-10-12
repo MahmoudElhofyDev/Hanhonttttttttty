@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#09070d">
+  <title>إلى هنهونتيييي ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=El+Messiri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="film-grain" aria-hidden="true"></div>
+  <div class="aurora aurora-one" aria-hidden="true"></div>
+  <div class="aurora aurora-two" aria-hidden="true"></div>
+  <div id="particles" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="wordmark" href="#home" aria-label="بداية الصفحة"><span class="mark-heart">♥</span> حكايتنا</a>
+    <button class="music-button" id="musicBtn" type="button" aria-label="تشغيل الموسيقى">
+      <span class="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <span id="musicLabel">شغّلي موسيقانا</span>
+    </button>
+    <input id="musicFile" type="file" accept="audio/*" hidden>
+    <audio id="music" loop preload="none" src="assets/song.mp3"></audio>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-orbit orbit-a"></div>
+      <div class="hero-orbit orbit-b"></div>
+      <div class="hero-content">
+        <p class="eyebrow"><span></span> رسالة من قلبي لقلبك <span></span></p>
+        <h1>إلى <em>هنهونتيييي</em></h1>
+        <p class="hero-subtitle">في حكايات بتبدأ بالصدفة…<br>وحكايتنا بقت أجمل حاجة حصلتلي.</p>
+        <button class="primary-button" id="beginBtn" type="button">
+          <span>ادخلي حكايتنا</span><span class="button-arrow">←</span>
+        </button>
+        <div class="scroll-note"><span class="scroll-line"></span> فيه كلام جوايا مستنيكي <span class="scroll-line"></span></div>
+      </div>
+      <div class="hero-bottom-note">مش محتاجين مناسبة… إنتِ المناسبة <span>♡</span></div>
+    </section>
+
+    <section class="letter-section section" id="letter">
+      <div class="section-kicker">01 / كلام من القلب</div>
+      <div class="letter-card">
+        <div class="letter-top"><span>رسالة خاصة جدًا</span><span class="letter-seal">♥</span></div>
+        <h2>عارفة يا <em>هنهونتيييي</em>؟</h2>
+        <div class="typed-message" id="typedMessage" aria-live="polite"></div>
+        <div class="typing-cursor" id="cursor" aria-hidden="true"></div>
+        <div class="letter-footer"><span>من قلبي ليكي، بكل الحب</span><span>∞</span></div>
+      </div>
+      <button class="text-button" id="replayLetter" type="button">اقريها تاني من الأول ↻</button>
+    </section>
+
+    <section class="chapters-section section" id="chapters">
+      <div class="section-kicker">02 / فصول حكايتنا</div>
+      <div class="section-heading">
+        <h2>كل ضغطة… <em>وراها حتة مني</em></h2>
+        <p>افتحي الفصول واحدة واحدة، كل فصل مخبّي ليكي مفاجأة صغيرة.</p>
+      </div>
+      <div class="chapter-grid">
+        <button class="chapter-card unlocked" data-chapter="0" type="button">
+          <span class="chapter-number">01</span><span class="chapter-icon">✧</span>
+          <span class="chapter-title">أول الحكاية</span><span class="chapter-desc">إيه اللي مميزك عندي؟</span><span class="chapter-action">افتحي الفصل ↗</span>
+        </button>
+        <button class="chapter-card locked" data-chapter="1" type="button" disabled>
+          <span class="chapter-number">02</span><span class="chapter-icon">♡</span>
+          <span class="chapter-title">حاجات بحبها فيكي</span><span class="chapter-desc">تفاصيل يمكن متاخديش بالك منها</span><span class="chapter-action">مقفول لحد ما تفتحي الأول</span>
+        </button>
+        <button class="chapter-card locked" data-chapter="2" type="button" disabled>
+          <span class="chapter-number">03</span><span class="chapter-icon">☾</span>
+          <span class="chapter-title">وعد صغير</span><span class="chapter-desc">كلمتين نفسي يفضلوا معاكي</span><span class="chapter-action">مقفول لحد ما تفتحي اللي قبله</span>
+        </button>
+      </div>
+      <div class="reveal-panel" id="revealPanel" hidden>
+        <div class="reveal-sparkle">✦</div>
+        <p class="reveal-label" id="revealLabel">فصل من حكايتنا</p>
+        <h3 id="revealTitle"></h3>
+        <p id="revealText"></p>
+        <button class="next-chapter" id="nextChapter" type="button">كمّلي الحكاية <span>←</span></button>
+      </div>
+    </section>
+
+    <section class="final-section section" id="final">
+      <div class="final-glow"></div>
+      <div class="section-kicker">03 / وآخر الكلام… مش آخر الحكاية</div>
+      <div class="final-heart" aria-hidden="true">♥</div>
+      <h2>لو رجع بيا الوقت،<br><em>هختارك برضه.</em></h2>
+      <p>مش عشان كل يوم لازم يبقى مثالي،<br>لكن عشان وجودك بيخلّي الأيام العادية ليها معنى.</p>
+      <button class="primary-button final-button" id="surpriseBtn" type="button"><span>آخر مفاجأة ليكي</span><span class="button-arrow">♡</span></button>
+      <div class="final-surprise" id="finalSurprise" hidden>
+        <span class="surprise-star">✦</span>
+        <p>يا هنهونتيييي، إنتِ مش جزء حلو من يومي وبس…<br>إنتِ من الحاجات اللي بتخليني أستنى بكرة وأنا مبتسم. بحبك ❤️</p>
+        <span class="surprise-signature">— من الشخص اللي اختار قلبه إنتِ</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><span>اتعملت مخصوص ليكي</span><span class="footer-heart">♥</span><span>حكايتنا لسه بتتكتب…</span></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
